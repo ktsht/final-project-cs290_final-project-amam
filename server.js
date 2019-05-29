@@ -10,7 +10,7 @@ var houseData = require('./houseData');
 var mongoHost = "classmongo.engr.oregonstate.edu";
 var mongoPort = '27017';
 var mongoUsername = "cs290_kitaa";
-var mongoPassword = "1993Teva0930";
+var mongoPassword = "cs290amam";
 var mongoDBName = "cs290_kitaa";
 
 var mongoURL = "mongodb://" +
@@ -40,6 +40,7 @@ app.get('/', function(req, res, next){
                 });
         })
 });
+
 
 app.get('/house', function(req, res, next){
         var houseCollection = mongoDB.collection('house');
