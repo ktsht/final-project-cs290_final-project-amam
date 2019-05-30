@@ -4,26 +4,43 @@
   font-size: 30px;
   font-weight: bold;
   font-family: sans-serif;
-  /* background-color: #FF4500; */
   color: black;
   border-bottom: 5px solid #FF4500;
 }
-
 body {
   font-family: Roboto, Helvetica, sans-serif;
   margin: 0;
-  /* background-image: url("./osu-img.jpg"); */
   background-color: #eee;
 }
 a {
   text-decoration: none;
 }
+p {
+  margin-left: 5%;
+  margin-top: 1%;
+  font-weight: bold;
+  font-style: italic;
+}
 
-.input-element, .accept-button {
+.accept-button {
   margin-left: 5%;
   margin-top: 1%;
   font-weight: bold;
 }
-#attribution-input {
-  flex: wrap;
+.prompt {
+  margin-left: 5%;
+  margin-top: 1%;
+  font-weight: bold;
 }
+.box {
+  margin-left: 5%;
+  margin-bottom: 1%;
+  font-weight: bold;
+  flex: 0 1 28%;
+  display: flex;
+}
+
+/* #attribution-input {
+  flex: wrap;
+  margin-left: 80%;
+} */

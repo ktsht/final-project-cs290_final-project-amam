@@ -22,10 +22,16 @@ acceptBtn.addEventListener('click', function () {
    else{
       alert('Enter values in all required fields');
    }
+   cleanInput();
 });
-document.getElementById('name-attribution-input').value = "";
-document.getElementById('room-attribution-input').value = "";
-document.getElementById('mates-attribution-input').value = "";
-document.getElementById('price-attribution-input').value = "";
-document.getElementById('address-attribution-input').value = "";
-document.getElementById('description-text-input').value = "";
+
+function cleanInput() {
+  document.getElementById('name-attribution-input').value = "";
+  document.getElementById('room-attribution-input').value = "";
+  document.getElementById('mates-attribution-input').value = "";
+  document.getElementById('price-attribution-input').value = "";
+  document.getElementById('address-attribution-input').value = "";
+  document.getElementById('description-text-input').value = "";
+}
+
+cleanInput();
