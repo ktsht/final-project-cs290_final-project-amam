@@ -6,3 +6,5 @@ How to run (May28 by Atsuhito)
   $ node server.js
 2. Access to PORT 9900 of flip server on your web browser
   http://flip2.engr.oregonstate.edu:9900/ or http://flip3.engr.oregonstate.edu:9900/ 
+
+flip# will be different each time you log in. Just double check it, and make sure you have the right one! (Miguel)
