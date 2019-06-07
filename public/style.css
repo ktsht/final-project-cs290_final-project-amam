@@ -1,5 +1,5 @@
 body {
-        font-family: 'Rubik', sans-serif, Roboto, Helvetica;
+        font-family: 'Karla', sans-serif, Roboto, Helvetica;
         margin: 0;
         background-color: #ff057600;
 }
@@ -268,7 +268,7 @@ p.house-author {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.85);
+  /* background-color: rgba(0, 0, 0, 0.85); */
 }
 
 #create-house-modal {
@@ -290,10 +290,12 @@ p.house-author {
   max-width: 300px;
   min-width: 150px;
   min-height: 100px;
-  margin: 40px 0 0 40px;
-  background-color: #FFF;
-  border-radius: 5px;
-  color: #ce907d;
+  margin: 130px 0 0 60px;
+  background-color: white;
+  border: solid 1px black;
+  /* box-shadow: 2px 2px lightgray; */
+  border-radius: 2px;
+  color: black;
 }
 
 .modal-header {
@@ -315,7 +317,7 @@ p.house-author {
   background: none;
   padding: 0;
   cursor: pointer;
-  color: #ce907d;
+  color: #FFDD00;
 }
 
 .modal-body {
@@ -342,7 +344,7 @@ p.house-author {
   padding: 8px;
   font-size: 20px;
   border: 1px solid #aaa;
-  color: #ce907d;
+  color: black;
 }
 
 .house-input-element textarea {
@@ -356,11 +358,11 @@ p.house-author {
 }
 
 .modal-footer button {
-  font-size: 20px;
+  font-size: 12px;
   background-color: #fff;
   color: #333;
   border: 1px solid #dadada;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   padding: 10px;
   margin-right: 20px;
   cursor: pointer;
@@ -371,10 +373,10 @@ p.house-author {
 }
 
 .modal-footer .modal-accept-button {
-  background-color: #d0aba0;
-  color: #fff;
+  background-color: #FFDD00;
+  color: black;
 }
 
 .modal-footer .modal-accept-button:hover {
-  background-color: #087dde;
+  /* background-color: #087dde; */
 }

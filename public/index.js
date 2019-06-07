@@ -17,7 +17,7 @@ var close = document.getElementsByClassName('modal-close-button');
 close[0].addEventListener('click', function(event){
         event.preventDefault();
         console.log("== Cancel clicked, event.target:", event.target);
-        document.getElementById('house-text-input-1').value = "";
+        document.getElementsByClassName('house-text-input')[0].value = "";
         var backdrop = document.getElementById('modal-backdrop');
         backdrop.classList.toggle('hidden');
         var dialog = document.getElementById('create-house-modal');
@@ -28,7 +28,7 @@ var cancel = document.getElementsByClassName('modal-cancel-button');
 cancel[0].addEventListener('click', function(event){
         event.preventDefault();
         console.log("== Cancel clicked, event.target:", event.target);
-        document.getElementById('house-text-input-1').value = "";
+        document.getElementsByClassName('house-text-input')[0].value = "";
         var backdrop = document.getElementById('modal-backdrop');
         backdrop.classList.toggle('hidden');
         var dialog = document.getElementById('create-house-modal');
@@ -39,15 +39,23 @@ var acceptTwit = document.getElementsByClassName('modal-accept-button');
 acceptTwit[0].addEventListener('click', function(event){
         event.preventDefault();
         console.log("== insert button clicked, event.target:", event.target);
-        var textInput = document.getElementById('house-text-input-1');
-        if(textInput.value){
-                //filterContents(textInput.value);
-                document.getElementById('house-text-input-1').value = "";
-                var backdrop = document.getElementById('modal-backdrop');
-                backdrop.classList.toggle('hidden');
-                var dialog = document.getElementById('create-house-modal');
-                dialog.classList.toggle('hidden');
-        } else {
-                alert("Fill the boxes!");
+        var textInput = document.getElementsByClassName('house-text-input'); // input from user for flitering price
+        var flag;
+        while(flag){
+                if(textInput[0].value){
+                        //filterContents(textInput.value);
+                        document.getElementsByClassName('house-text-input').value = "";
+                        var backdrop = document.getElementById('modal-backdrop');
+                        backdrop.classList.toggle('hidden');
+                        var dialog = document.getElementById('create-house-modal');
+                        dialog.classList.toggle('hidden');
+                        flag = 0;
+                } else {
+                        alert("Fill the boxes!");
+                        flag = 1;
+                }
         }
+        window.location.href = textInput[0].value;
+
+
 });

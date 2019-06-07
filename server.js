@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/', function(req, res, next){
-        var houseCollection = mongoDB.collection('house');
+        var houseCollection = mongoDB.collection('test');
         houseCollection.find({}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
@@ -41,6 +41,39 @@ app.get('/', function(req, res, next){
         })
 });
 
+app.get('/:minPrice', function(req, res, next){
+        var houseCollection = mongoDB.collection('test');
+        var minPrice = req.params.minPrice;
+        houseCollection.find({price: {$gte: eval(minPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
+                if(err){
+                        res.status(500).send("Error connecting to DB.");
+                }
+                res.status(200).render('housePage',{
+                        house: houseDocs
+                });
+        })
+        var myobj = {price: eval(minPrice)};
+        houseCollection.insertOne(myobj, function(err, res){
+                if(err){
+                        res.status(500).send("Error connecting to DB.");
+                }
+                console.log("insertData successfully");
+        });
+});
+
+//
+// app.get('/minPrice', function(req, res, next){
+//         var houseCollection = mongoDB.collection('test');
+//         var minPrice = req.query.minPrice;
+//         houseCollection.find({price: {$gte: eval(minPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
+//                 if(err){
+//                         res.status(500).send("Error connecting to DB.");
+//                 }
+//                 res.status(200).render('housePage',{
+//                         house: houseDocs
+//                 });
+//         })
+// });
 
 app.get('/house', function(req, res, next){
         var houseCollection = mongoDB.collection('house');
