@@ -65,7 +65,7 @@ app.get('/major/:major', function(req, res, next){
         var houseCollection = mongoDB.collection('test');
         var findMajor = req.params.major;
         console.log("Major: "+findMajor);
-        houseCollection.find({major: new RegExp(findMajor)}).toArray(function(err, houseDocs){
+        houseCollection.find({major: new RegExp(findMajor)}).toArray(function(err, houseDocs){ // change cursor to toArray
                 if(err){
                         res.status(500).send("Error connecting to DB.");
                 }
@@ -76,15 +76,20 @@ app.get('/major/:major', function(req, res, next){
 });
 
 
-app.get('/house', function(req, res, next){
-        var houseCollection = mongoDB.collection('house');
-        houseCollection.find({}).toArray(function(err, houseDocs){
+app.get('/house/:house', function(req, res, next){
+        var houseCollection = mongoDB.collection('test');
+        var findHouse = req.params.house;
+        houseCollection.find({_id: new RegExp(findHouse)}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
+                } else if(houseDocs.length < 1){
+                        next(); // houseDocs Array is empty -> error 404
+                } else{
+                        res.status(200).render('housePage',{
+                                house: houseDocs[0] // or, 'housePage', houseDocs[0]
+                        });
                 }
-                res.status(200).render('housePage',{
-                        house: houseDocs
-                });
+
         })
 });
 

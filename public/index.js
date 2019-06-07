@@ -3,6 +3,7 @@
  */
 /* push button =>#modal-backdrop, #create-house-modal */
 
+// price filtering
 var price = document.getElementById('price');
 price.addEventListener('click', function (event) {
         event.preventDefault();
@@ -60,7 +61,7 @@ acceptPrice[0].addEventListener('click', function(event){
 
 });
 
-
+// major filtering
 var major = document.getElementById('major');
 major.addEventListener('click', function (event) {
         event.preventDefault();
