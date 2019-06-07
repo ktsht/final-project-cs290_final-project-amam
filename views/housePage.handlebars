@@ -8,21 +8,21 @@
       </p>
       <div class="distance">
               <div class="walking">
-                      <image class="transport_img" src='images/walking.png'>
+                      <image class="transport_img" src='/images/walking.png'>
                               <div class="time">
                                         <p class="digits">{{walking}}</p>
                                         <p class="minutes">min</p>
                               </div>
               </div>
               <div class="bike">
-                      <image class="transport_img" src='images/bicycle.png'>
+                      <image class="transport_img" src='/images/bicycle.png'>
                               <div class="time">
                                         <p class="digits">{{bicycle}}</p>
                                         <p class="minutes">min</p>
                               </div>
               </div>
               <div class="car">
-                      <image class="transport_img" src='images/car.png'>
+                      <image class="transport_img" src='/images/car.png'>
                               <div class="time">
                                         <p class="digits">{{car}}</p>
                                         <p class="minutes">min</p>
@@ -44,27 +44,52 @@
 
 </main>
 
-<div id="modal-backdrop" class="hidden"></div>
-<div id="create-house-modal" class="hidden">
+<div id="price-modal-backdrop" class="hidden"></div>
+<div id="create-price-modal" class="hidden">
   <div class="modal-dialog">
 
     <div class="modal-header">
       <h3>Price</h3>
-      <button type="button" class="modal-close-button">&times;</button>
+      <button type="button" class="price-modal-close-button">&times;</button>
     </div>
 
     <div class="modal-body">
-      <div class="house-input-element">
+      <div class="price-input-element">
         <form action="/minPrice" method="GET">
-                <label>Low</label>
-                <input class="house-text-input" type="number" required />
+                <label>MAX</label>
+                <input class="price-text-input" type="number" required />
         </form>
       </div>
     </div>
 
     <div class="modal-footer">
-      <button type="button" class="modal-cancel-button">Cancel</button>
-      <button type="button" class="modal-accept-button">Apply</button>
+      <button type="button" class="price-modal-cancel-button">Cancel</button>
+      <button type="button" class="price-modal-accept-button">Apply</button>
+    </div>
+
+  </div>
+</div>
+
+<div id="major-modal-backdrop" class="hidden"></div>
+<div id="create-major-modal" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Major</h3>
+      <button type="button" class="major-modal-close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="major-input-element">
+        <form action="/minPrice" method="GET">
+                <input class="major-text-input" type="text" required />
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="major-modal-cancel-button">Cancel</button>
+      <button type="button" class="major-modal-accept-button">Apply</button>
     </div>
 
   </div>

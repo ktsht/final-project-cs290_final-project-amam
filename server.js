@@ -41,10 +41,10 @@ app.get('/', function(req, res, next){
         })
 });
 
-app.get('/:minPrice', function(req, res, next){
+app.get('/maxPrice/:maxPrice', function(req, res, next){
         var houseCollection = mongoDB.collection('test');
-        var minPrice = req.params.minPrice;
-        houseCollection.find({price: {$gte: eval(minPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
+        var maxPrice = req.params.maxPrice;
+        houseCollection.find({price: {$lte: eval(maxPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
                 }
@@ -52,28 +52,29 @@ app.get('/:minPrice', function(req, res, next){
                         house: houseDocs
                 });
         })
-        var myobj = {price: eval(minPrice)};
-        houseCollection.insertOne(myobj, function(err, res){
+        // var myobj = {price: eval(maxPrice)};
+        // houseCollection.insertOne(myobj, function(err, res){
+        //         if(err){
+        //                 res.status(500).send("Error connecting to DB.");
+        //         }
+        //         console.log("insertData successfully");
+        // });
+});
+
+app.get('/major/:major', function(req, res, next){
+        var houseCollection = mongoDB.collection('test');
+        var findMajor = req.params.major;
+        console.log("Major: "+findMajor);
+        houseCollection.find({major: {$eq: eval(findMajor)}}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
                 }
-                console.log("insertData successfully");
-        });
+                res.status(200).render('housePage',{
+                        house: houseDocs
+                });
+        })
 });
 
-//
-// app.get('/minPrice', function(req, res, next){
-//         var houseCollection = mongoDB.collection('test');
-//         var minPrice = req.query.minPrice;
-//         houseCollection.find({price: {$gte: eval(minPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
-//                 if(err){
-//                         res.status(500).send("Error connecting to DB.");
-//                 }
-//                 res.status(200).render('housePage',{
-//                         house: houseDocs
-//                 });
-//         })
-// });
 
 app.get('/house', function(req, res, next){
         var houseCollection = mongoDB.collection('house');
