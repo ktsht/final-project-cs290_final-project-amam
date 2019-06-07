@@ -65,7 +65,7 @@ app.get('/major/:major', function(req, res, next){
         var houseCollection = mongoDB.collection('test');
         var findMajor = req.params.major;
         console.log("Major: "+findMajor);
-        houseCollection.find({major: {$eq: eval(findMajor)}}).toArray(function(err, houseDocs){
+        houseCollection.find({major: new RegExp(findMajor)}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
                 }

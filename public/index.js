@@ -113,7 +113,7 @@ acceptMajor[0].addEventListener('click', function(event){
                         flag = 1;
                 }
         }
-        window.location.href = textInput[0].value;
+        window.location.href = "/major/"+textInput[0].value;
 
 
 });
