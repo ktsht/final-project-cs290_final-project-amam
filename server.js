@@ -4,6 +4,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectId;
 
 var houseData = require('./houseData');
 
@@ -41,6 +42,10 @@ app.get('/', function(req, res, next){
         })
 });
 
+app.get('/sample', function(req, res, next){
+        res.status(200).render('sample_post');
+});
+
 app.get('/maxPrice/:maxPrice', function(req, res, next){
         var houseCollection = mongoDB.collection('test');
         var maxPrice = req.params.maxPrice;
@@ -75,21 +80,29 @@ app.get('/major/:major', function(req, res, next){
         })
 });
 
+app.get('/people/:person', function (req, res, next) {
+  var person = req.params.person.toLowerCase();
+  if (peopleData[person]) {
+    res.status(200).render('photoPage', peopleData[person]);
+  } else {
+    next();
+  }
+});
 
-app.get('/house/:house', function(req, res, next){
+app.get('/detail/:id', function(req, res, next){
         var houseCollection = mongoDB.collection('test');
-        var findHouse = req.params.house;
-        houseCollection.find({_id: new RegExp(findHouse)}).toArray(function(err, houseDocs){
+        var houseId = req.params.id;
+        houseCollection.find({_id: new ObjectId(houseId)}).toArray(function(err, houseDocs){
+                console.log("houseId: " + houseId);
+                console.log(houseDocs);
                 if(err){
                         res.status(500).send("Error connecting to DB.");
-                } else if(houseDocs.length < 1){
-                        next(); // houseDocs Array is empty -> error 404
-                } else{
-                        res.status(200).render('housePage',{
-                                house: houseDocs[0] // or, 'housePage', houseDocs[0]
-                        });
+                // } else if(houseDocs.length < 1){
+                //         next(); // houseDocs Array is empty -> error 404
                 }
-
+                res.status(200).render('housePage',{
+                        house: houseDocs
+                });
         })
 });
 
