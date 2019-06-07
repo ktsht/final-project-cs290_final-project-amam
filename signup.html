@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>Sign Up</title>
+            <link rel="stylesheet" href="signup.css" media="screen">
+            <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+            <script src="signup.js" charset="utf-8" defer></script>
+    </head>
+    <body>
+        <video autoplay muted loop id = "myVideo">
+                <source src = "../final-project-cs290_final-project-amam/videos/splash_video.mp4" type="video/mp4">
+        </video> 
+		<article class="Signup-Box">
+            <div class="Signup-Box-Content">
+                    <div class="signup-header">Sign Up</div>
+                    <div clas="unit">
+                            <label class="field" for="first-name-input">First Name </label>
+                            <input type="text" class="input-box" id="first-name-input">
+                    </div clas="unit">
+                    <div>
+                            <label class="field" for="last-name-input">Last Name </label>
+                            <input type="text" class="input-box" id="last-name-input">
+                    </div>
+                    <div clas="unit">
+                            <label  class="field" for="major-input">Major </label>
+                            <input type="text" class="input-box" id="major-input">
+                    </div>
+                    <div clas="unit">
+                            <label class="field" for="year-input">Year </label>
+                            <!-- <input type="text" class="input-box" id="year-input" placeholder="Choose a year..."> -->
+                            <div class="dropdown">
+                                <select class='dropdown-content'>
+                                    <option class='option' id='option1'>Freshman</option>
+                                    <option class='option' id='option2'>Sophomore</option>
+                                    <option class='option' id='option3'>Junior</option>
+                                    <option class='option' id='option4'>Senior</option>
+                                    <option class='option' id='option4'>Graduate</option>
+                                </select>
+                            </div>
+                    </div>
+                    <div clas="unit">
+                            <label class="field" for="username-input">Username </label>
+                            <input type="text" class="input-box" id="username-input">
+                    </div>
+                    <div clas="unit">
+                            <label class="field" for="password-input">Password </label>
+                            <input type="text" class="input-box" id="password-input">
+                    </div>
+            </div>
+        </article>
+        <button class="sign-up-button" type="button">GET STARTED</button>
+    </body>
+</html>
