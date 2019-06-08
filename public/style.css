@@ -34,6 +34,16 @@ a {
     /* border-style: solid; */
 }
 
+a.plus {
+    border: solid 3px #FFDD00;
+    font-size: 16pt;
+    font-weight: 900;
+    padding: 6px;
+    position: fixed;
+    top: 17px;
+    left: 92%;
+}
+
 .navbar {
   background-color: #fff;
   font-size: 18px;
