@@ -34,7 +34,7 @@
               <p class="house-author">
                 <a href="#">{{name}}</a>
                 <a href="/major/{{major}}">#{{major}}</a>
-                <a href="#">#{{year}}</a>
+                <a href="/year/{{year}}">#{{year}}</a>
               </p>
      </div>
      <p class="price">${{price}}</p>
@@ -90,6 +90,32 @@
     <div class="modal-footer">
       <button type="button" class="major-modal-cancel-button">Cancel</button>
       <button type="button" class="major-modal-accept-button">Apply</button>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="year-modal-backdrop" class="hidden"></div>
+<div id="create-year-modal" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Year</h3>
+      <button type="button" class="year-modal-close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="year-input-element">
+        <form action="/minPrice" method="GET">
+                <input class="year-text-input" type="text" required />
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="year-modal-cancel-button">Cancel</button>
+      <button type="button" class="year-modal-accept-button">Apply</button>
     </div>
 
   </div>

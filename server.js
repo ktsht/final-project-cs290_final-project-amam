@@ -80,6 +80,20 @@ app.get('/major/:major', function(req, res, next){
         })
 });
 
+app.get('/year/:year', function(req, res, next){
+        var houseCollection = mongoDB.collection('test');
+        var findYear = req.params.year;
+        console.log("Year: "+findYear);
+        houseCollection.find({year: new RegExp(findYear)}).toArray(function(err, houseDocs){ // change cursor to toArray
+                if(err){
+                        res.status(500).send("Error connecting to DB.");
+                }
+                res.status(200).render('housePage',{
+                        house: houseDocs
+                });
+        })
+});
+
 app.get('/people/:person', function (req, res, next) {
   var person = req.params.person.toLowerCase();
   if (peopleData[person]) {
