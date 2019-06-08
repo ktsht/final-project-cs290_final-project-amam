@@ -100,9 +100,7 @@ app.get('/detail/:id', function(req, res, next){
                 // } else if(houseDocs.length < 1){
                 //         next(); // houseDocs Array is empty -> error 404
                 }
-                res.status(200).render('housePage',{
-                        house: houseDocs
-                });
+                res.status(200).render('details');
         })
 });
 
