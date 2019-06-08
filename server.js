@@ -30,6 +30,12 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
+app.get('/link', function(req, res, next){
+	res.status(200).sendFile('/public/splash.html');
+	res.redirect('/splash.html');
+	
+});
+
 app.get('/', function(req, res, next){
         var houseCollection = mongoDB.collection('test');
         houseCollection.find({}).toArray(function(err, houseDocs){
