@@ -1,8 +1,6 @@
 html,body{
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 #myVideo {
@@ -53,8 +51,8 @@ html,body{
 .input-box {
     display: flex;
     margin-left: 10%;
-    margin-top: 2.2%;
-    margin-bottom: 2.2%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
     font-weight: bold;
     flex: 0 1 5%;
     height: 20px;
@@ -66,8 +64,7 @@ html,body{
     padding: 8%;
 }
 .sign-up-button{
-    
-    position: fixed;
+    position: absolute;
     top: 40%;
     left: -1.5%;
     height: 100px;

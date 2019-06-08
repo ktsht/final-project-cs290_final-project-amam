@@ -8,6 +8,7 @@ button.addEventListener('click', function (event){
     console.log("yearOption:", yearOption);
     var usernameInput = document.getElementById('username-input').value;
     var passwordInput = document.getElementById('password-input').value;
+    var profileInput = document.getElementById('profile-input').value;
     if (!(firstNameInput || firstNameInput.value)){
         alert("Please fill all required fields.")
     }
@@ -29,6 +30,9 @@ button.addEventListener('click', function (event){
     }
     else if (!(passwordInput || passwordInput.value)){
         alert("Please fill all required fields.")
+    }
+    else if (!(profileInput || profileInput.value)){
+            alert("Please fill all required fields.")
     }else{
         var postRequest = new XMLHttpRequest();
         var requestURL = '/signup';
@@ -40,7 +44,8 @@ button.addEventListener('click', function (event){
             major: majorInput,
             year: yearOption,
             username: usernameInput,
-            password: passwordInput
+            password: passwordInput,
+            profile_pic: profileInput
         });
     }
     postRequest.setRequestHeader('Content-Type', 'application/json');
