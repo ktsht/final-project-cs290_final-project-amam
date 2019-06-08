@@ -42,6 +42,44 @@ app.get('/', function(req, res, next){
         })
 });
 
+app.get('/signup', function(req, res, next){
+        var houseCollection = mongoDB.collection('test2');
+        res.status(200).sendFile('/public/signup.html');
+});
+
+
+app.post('/signup', function(req, res){
+        if(req.body && req.body.first_name && req.body.last_name && req.body.major
+        && req.body.year && req.body.username && req.body.password){
+                var collection = mongoDB.collection('test2');    
+                collection.insertOne({
+                        first_name: req.body.first_name,
+                        last_name: req.body.last_name,
+                        year: req.body.year,
+                        major: req.body.major,
+                        username: req.body.username,
+                        password: req.body.password,
+                        house: []
+                },
+                        function(err, result){
+                                if(err){
+                                        console.log("inside err");
+                                        res.status(500).send({
+                                                error: "Error entering user information into DB"   
+                                        });
+                                }else{
+                                        console.log("==update result:",result);
+                                        if (result.matchedCount > 0){
+                                                res.status(200).send("Success");
+                                        }
+                                }
+                        }
+                );
+        }else{
+                res.status(400).send("Request needs to have all fields.");
+        }
+});
+
 app.get('/sample', function(req, res, next){
         res.status(200).render('sample_post');
 });
