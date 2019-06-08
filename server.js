@@ -114,7 +114,17 @@ app.get('/detail/:id', function(req, res, next){
                 // } else if(houseDocs.length < 1){
                 //         next(); // houseDocs Array is empty -> error 404
                 }
-                res.status(200).render('details');
+                res.status(200).render('details', {
+                        profile: houseDocs[0].profile,
+                        caption: houseDocs[0].caption,
+                        price: houseDocs[0].price,
+                        description: houseDocs[0].description,
+                        walking: houseDocs[0].walking,
+                        bicycle: houseDocs[0].bicycle,
+                        car: houseDocs[0].car,
+                        nBedrooms: houseDocs[0].nBedrooms,
+                        emptyRooms: houseDocs[0].emptyRooms
+                });
         })
 });
 
