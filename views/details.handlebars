@@ -1,38 +1,36 @@
+
 <div class="img-container">
     <div class="main-image-box">
-        <img src="./testImgs/img1.jpg" class="main-image">
+        <img src="/testImgs/img1.jpg" class="main-image">
     </div>
     
     <div class="second-col">
         <div class="second-image-box">
-            <img src="./testImgs/img2.jpg" class="second-image">
+            <img src="/testImgs/img2.jpg" class="second-image">
         </div>
         <div class="third-image-box">
-            <img src="./testImgs/img3.jpg"class="third-image">
+            <img src="/testImgs/img3.jpg"class="third-image">
         </div>
     </div>
 
     <div class="third-col">
         <div class="forth-image-box">
-            <img src="./testImgs/img4.jpg" class="forth-image">
+            <img src="/testImgs/img4.jpg" class="forth-image">
         </div>
         <div class="fifth-image-box">
-            <img src="./testImgs//img5.jpg" class="fifth-image">
+            <img src="/testImgs//img5.jpg" class="fifth-image">
         </div>
     </div>
 </div>
 
 <div class="info-container">
 
-    <div class="icon"> user icon </div>
+    <div class="icon"> <image class="profile-pic" src='{{profile}}'></image> </div>
 
         <div class="description">
 
-            <div class="caption">CAPTION</div>
-         Tempor cras sapien volutpat imperdiet venenatis quis ultricies primis platea. Maecenas adipiscing vehicula viverra aliquet consectetur augue viverra molestie aliquet tortor. Nisi magnis egestas ridiculus in sagittis sociis ridiculus molestie posuere. Id sollicitudin per arcu mauris tellus in vivamus? Torquent vulputate aenean nam a dapibus lectus dui tortor tortor! Integer ultrices at dolor ligula sit consectetur.
-
-            Dictumst arcu ut at auctor duis ullamcorper elementum tortor a euismod ullamcorper metus. Facilisi mattis primis euismod erat luctus montes mus ac et libero ut sem. Ad sociis, nisi ultrices scelerisque cubilia. Vestibulum ultricies pellentesque aliquam ornare scelerisque rutrum varius id maecenas, cubilia purus. Cursus velit habitasse nisl urna senectus tempor ac congue?
-
+            <div class="caption">{{caption}}</div>
+            {{description}}
         </div>
 
         <div class="empty-space"></div>
@@ -41,13 +39,13 @@
 
             <div class="extra-details">
 
-                PRICE
+                ${{price}}
                 <ul>
-                    <li>WALK:</li>
-                    <li>BIKE:</li>
-                    <li>CAR:</li>
-                    <li>ROOMS:</li>
-                    <li>EMPTY ROOMS:</li>
+                    <li>WALK: {{walking}} minutes</li>
+                    <li>BIKE: {{bicycle}} minutes</li>
+                    <li>CAR: {{car}} minutes</li>
+                    <li>ROOMS: {{nBedrooms}} </li>
+                    <li>EMPTY ROOMS: {{emptyRooms}}</li>
                 </ul>
             </div>
 
