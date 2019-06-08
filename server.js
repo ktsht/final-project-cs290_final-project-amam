@@ -42,14 +42,14 @@ app.get('/', function(req, res, next){
 });
 
 app.get('/signup', function(req, res, next){
-        var houseCollection = mongoDB.collection('test2');
         res.status(200).sendFile('/public/signup.html');
+        res.redirect('/');
 });
 
 
 app.post('/signup', function(req, res){
         if(req.body && req.body.first_name && req.body.last_name && req.body.major 
-        && req.body.year && req.body.username && req.body.password){
+        && req.body.year && req.body.username && req.body.password && req.body.profile_pic){
                 var collection = mongoDB.collection('test2');    
                 collection.insertOne({
                         first_name: req.body.first_name,
@@ -58,6 +58,7 @@ app.post('/signup', function(req, res){
                         major: req.body.major,
                         username: req.body.username,
                         password: req.body.password,
+                        profile_pic:req.body.profile_pic,
                         house: []
                 },
                         function(err, result){
@@ -70,9 +71,10 @@ app.post('/signup', function(req, res){
                                         console.log("==update result:",result);
                                         if (result.matchedCount > 0){
                                                 res.status(200).send("Success");
-                                        }else{
-                                                next();
                                         }
+                                        /*else{
+                                                next();
+                                        }*/
                                 }
                         }
                 );
