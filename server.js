@@ -49,7 +49,7 @@ app.get('/', function(req, res, next){
 });
 
 app.get('/signup', function(req, res, next){
-        var houseCollection = mongoDB.collection('test2');
+        var houseCollection = mongoDB.collection('house');
         res.status(200).sendFile('/public/signup.html');
 });
 
@@ -57,7 +57,7 @@ app.get('/signup', function(req, res, next){
 app.post('/signup', function(req, res){
         if(req.body && req.body.first_name && req.body.last_name && req.body.major
         && req.body.year && req.body.username && req.body.password){
-                var collection = mongoDB.collection('test2');    
+                var collection = mongoDB.collection('house');    
                 collection.insertOne({
                         first_name: req.body.first_name,
                         last_name: req.body.last_name,
