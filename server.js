@@ -33,11 +33,11 @@ app.use(express.static('public'));
 app.get('/link', function(req, res, next){
 	res.status(200).sendFile('/public/splash.html');
 	res.redirect('/splash.html');
-	
+
 });
 
 app.get('/', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         houseCollection.find({}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
@@ -86,12 +86,8 @@ app.post('/signup', function(req, res){
         }
 });
 
-app.get('/sample', function(req, res, next){
-        res.status(200).render('sample_post');
-});
-
 app.get('/maxPrice/:maxPrice', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var maxPrice = req.params.maxPrice;
         houseCollection.find({price: {$lte: eval(maxPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
                 if(err){
@@ -111,7 +107,7 @@ app.get('/maxPrice/:maxPrice', function(req, res, next){
 });
 
 app.get('/major/:major', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var findMajor = req.params.major;
         console.log("Major: "+findMajor);
         houseCollection.find({major: new RegExp(findMajor)}).toArray(function(err, houseDocs){ // change cursor to toArray
@@ -125,7 +121,7 @@ app.get('/major/:major', function(req, res, next){
 });
 
 app.get('/year/:year', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var findYear = req.params.year;
         console.log("Year: "+findYear);
         houseCollection.find({year: new RegExp(findYear)}).toArray(function(err, houseDocs){ // change cursor to toArray
@@ -138,17 +134,9 @@ app.get('/year/:year', function(req, res, next){
         })
 });
 
-app.get('/people/:person', function (req, res, next) {
-  var person = req.params.person.toLowerCase();
-  if (peopleData[person]) {
-    res.status(200).render('photoPage', peopleData[person]);
-  } else {
-    next();
-  }
-});
 
 app.get('/detail/:id', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var houseId = req.params.id;
         houseCollection.find({_id: new ObjectId(houseId)}).toArray(function(err, houseDocs){
                 console.log("houseId: " + houseId);
