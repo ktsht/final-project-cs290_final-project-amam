@@ -146,7 +146,7 @@ app.post('/postt', function(req, res){
 app.get('/maxPrice/:maxPrice', function(req, res, next){
         var houseCollection = mongoDB.collection('house');
         var maxPrice = req.params.maxPrice;
-        houseCollection.find({price: {$lte: eval(maxPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
+        houseCollection.find({'house.0.price':{$lte: maxPrice}}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
                 }
