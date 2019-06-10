@@ -65,6 +65,8 @@ app.post('/signup', function(req, res){
                         major: req.body.major,
                         username: req.body.username,
                         password: req.body.password,
+                        profile_pic: req.body.profile_pic,
+                        has_post: 0,
                         house: []
                 },
                         function(err, result){
