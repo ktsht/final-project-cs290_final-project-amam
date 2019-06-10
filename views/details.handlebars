@@ -1,36 +1,36 @@
 
 <div class="img-container">
     <div class="main-image-box">
-        <img src="/testImgs/img1.jpg" class="main-image">
+        <image src='{{house.0.phot1}}' class="main-image">
     </div>
     
     <div class="second-col">
         <div class="second-image-box">
-            <img src="/testImgs/img2.jpg" class="second-image">
+            <img src='{{house.0.phot2}}' class="second-image">
         </div>
         <div class="third-image-box">
-            <img src="/testImgs/img3.jpg"class="third-image">
+            <img src='{{house.0.phot3}}' class="third-image">
         </div>
     </div>
 
     <div class="third-col">
         <div class="forth-image-box">
-            <img src="/testImgs/img4.jpg" class="forth-image">
+            <img src= '{{house.0.phot4}}' class="forth-image">
         </div>
         <div class="fifth-image-box">
-            <img src="/testImgs//img5.jpg" class="fifth-image">
+            <img src= '{{house.0.phot5}}' class="fifth-image">
         </div>
     </div>
 </div>
 
 <div class="info-container">
 
-    <div class="icon"> <image class="profile-pic" src='{{profile}}'></image> </div>
+    <div class="icon"> <image class="profile-pic" src='{{house.0.profile_pic}}'></image> </div>
 
         <div class="description">
 
-            <div class="caption">{{caption}}</div>
-            {{description}}
+            <div class="caption">{{house.0.caption}}</div>
+            "{{house.0.description}}"
         </div>
 
         <div class="empty-space"></div>
@@ -39,13 +39,13 @@
 
             <div class="extra-details">
 
-                ${{price}}
+                <div id="pricePM">Price/Month: ${{house.0.price}}</div>
                 <ul>
-                    <li>WALK: {{walking}} minutes</li>
-                    <li>BIKE: {{bicycle}} minutes</li>
-                    <li>CAR: {{car}} minutes</li>
-                    <li>ROOMS: {{nBedrooms}} </li>
-                    <li>EMPTY ROOMS: {{emptyRooms}}</li>
+                    <li>WALK: {{house.0.walking}} minutes</li>
+                    <li>BIKE: {{house.0.bike}} minutes</li>
+                    <li>CAR: {{house.0.car}} minutes</li>
+                    <li>ROOMS: {{house.0.numRooms}} </li>
+                    <li>EMPTY ROOMS: {{house.0.avRooms}}</li>
                 </ul>
             </div>
 

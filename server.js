@@ -204,17 +204,25 @@ app.get('/detail/:id', function(req, res, next){
                 //         next(); // houseDocs Array is empty -> error 404
                 }
                 res.status(200).render('details', {
-                        profile: houseDocs[0].profile,
-                        caption: houseDocs[0].caption,
-                        price: houseDocs[0].price,
-                        description: houseDocs[0].description,
-                        walking: houseDocs[0].walking,
-                        bicycle: houseDocs[0].bicycle,
-                        car: houseDocs[0].car,
-                        nBedrooms: houseDocs[0].nBedrooms,
-                        emptyRooms: houseDocs[0].emptyRooms
+                        house:[{
+                                phot1: houseDocs[0].house[0].phot1,
+                                phot2: houseDocs[0].house[0].phot2,
+                                phot3: houseDocs[0].house[0].phot3,
+                                phot4: houseDocs[0].house[0].phot4,
+                                phot5: houseDocs[0].house[0].phot5,
+                                profile_pic: houseDocs[0].profile_pic,
+                                caption: houseDocs[0].house[0].caption,
+                                price: houseDocs[0].house[0].price,
+                                description: houseDocs[0].house[0].description,
+                                walking: houseDocs[0].house[0].walking,
+                                bike: houseDocs[0].house[0].bike,
+                                car: houseDocs[0].house[0].car,
+                                numRooms: houseDocs[0].house[0].numRooms,
+                                avRooms: houseDocs[0].house[0].avRooms
+                        }]
+                        
                 });
-        })
+        });
 });
 
 // app.get('/house/:house', ...)each house detail page  //using-mongodb > server.js

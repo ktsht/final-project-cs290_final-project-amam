@@ -1,6 +1,7 @@
 html, body{
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 #myVideo{
@@ -15,21 +16,25 @@ object-fit: cover;
 }
 
 
-.logo img{
-bottom: 10%;
-float: left;
-width: 100px;
-height: 100px;
+.logo img{position: relative;top: 10%;float: left;width: 100px;height: 100px;}
 
+.logo {
+  position: fixed;
+  top: 10px;
+  display: inline-flex;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .logo h1 {
   font-family: 'Rajdhani', sans-serif;
+  position: relative;
   font-size: 103px;
   color: #FFDD00;
-  position: absolute;
-  top: -5%;
-  left: 2%;
+  margin: 20px 0 0 23px;
+  font-size: 47pt;
+  /* top: -5%; */
+  /* left: 2%; */
 }
 
 .slogan{

@@ -1,3 +1,7 @@
+body{
+    font-family: 'Rajdhani', sans-serif;
+}
+
 .img-container{
     /* width: 100%; */
     display: flex;
@@ -81,13 +85,12 @@
     width: 40%;
     /*border: solid blue;*/
     padding-left: 20px;
-
-    font-size: 18px
+    font-size: 25px;
+    padding: 0 0 0 70px;
 }
 
 .caption{
     text-align:center;
-    padding-left:
     font-size: 50px;
 }
 
@@ -96,8 +99,11 @@
     /*border: solid orange;*/
 }
 
-.price{
-
+#pricePM{
+    font-style: none;
+    font-size: 45px;
+    background-color: #ffdd00;
+    text-align: center;
 }
 
 .extra-details-container{
