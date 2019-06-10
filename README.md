@@ -25,3 +25,30 @@ Link Website page flow
     
 5. /details -- Will take you the details page.
     Here, the unique houses details are listed, as well as the house images.
+    
+    Aishwarya:
+        Signup.html
+        Signup.css
+        Signup.js
+        Server.js
+        
+    Atsuhito:
+        housePage.handlebars
+        main.handlebars
+        header.handlebars
+        404.handlebars
+        server.js
+    
+    Martin:
+        splash.html
+        splash.css
+        details.handlebars
+        details.css
+        server.js
+       
+    Miguel:
+        newPost.html
+        newPost.js
+        newPost.css
+        newPost.handlebars
+     
