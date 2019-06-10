@@ -127,7 +127,7 @@ margin-bottom: 50px;
   display: none;
 }
 
-.modal-dialog {
+.modal-dialog-newPost {
   width: auto;
   max-width: 600px;
   min-width: 350px;
