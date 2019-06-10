@@ -1,0 +1,84 @@
+<form>
+  <div class="input-element">
+    <label class="prompt" for="id-input">Confirm your username * </label>
+    <input type="text" class="box" id="id-attribution-input">
+  </div>
+  <div class="input-element">
+    <label class="prompt" for="caption-input">Caption * </label>
+    <input type="text" class="box" id="caption-attribution-input" name="nombre">
+  </div>
+  <div class="input-element">
+    <label class="prompt" for="mates-input">Current roommates * </label>
+    <input type="text" class="box" id="mates-attribution-input">
+  </div>
+  <div class="input-element">
+    <label class="prompt" for="numrooms-input">Number of bedrooms *</label>
+    <input type="text" class="box" id="numRooms-attribution-input">
+  </div>
+  <div class="input-element">
+    <label class="prompt" for="avairooms-input">Number of rooms available *</label>
+    <input type="text" class="box" id="avaiRooms-attribution-input">
+  </div>
+  <div class="input-element">
+    <form action="index.html" method="GET">
+    <label class="prompt" for="price-input">Rent per month * </label>
+    <input type="text" class="box" id="price-attribution-input" name="getRent">
+    </form>
+  </div>
+
+  <div class="input-element">
+    <p> Distance to OSU (minutes) *</p>
+    <label class="prompt" for="walking-input">Walking </label>
+    <input type="text" class="box" id="walking-attribution-input">
+    <label class="prompt" for="bike-input">Bike </label>
+    <input type="text" class="box" id="bike-attribution-input">
+    <label class="prompt" for="car-input">Car </label>
+    <input type="text" class="box" id="car-attribution-input">
+  </div>
+
+  <div class="input-element">
+    <label class="prompt" for="text-input">Brief Description about house/apartment *</label>
+    <textarea class="box" id="description-text-input"></textarea>
+  </div>
+
+  <div class="input-element">
+    <label class="prompt" for="photos-input">Add photos of house * </label>
+    <button type="button" id="add-photos" class="add-button">Add</button>
+  </div>
+
+  <div id="modal-backdrop" class="hidden"></div>
+  <div id="addPhoto-modal" class="hidden">
+    <div class="modal-dialog">
+
+      <div class="modal-header">
+        <h3>Please add at least one photo URL</h3>
+        <button type="button" class="modal-close-button">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="url-input-element">
+          <label class="prompt" for="url-input">Photo URL  </label>
+          <input type="text" class="box" id="url1-attribution-input">
+          <label class="prompt" for="url-input">Photo URL  </label>
+          <input type="text" class="box" id="url2-attribution-input">
+          <label class="prompt" for="url-input">Photo URL  </label>
+          <input type="text" class="box" id="url3-attribution-input">
+          <label class="prompt" for="url-input">Photo URL  </label>
+          <input type="text" class="box" id="url4-attribution-input">
+          <label class="prompt" for="url-input">Photo URL  </label>
+          <input type="text" class="box" id="url5-attribution-input">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="modal-cancel-button">Cancel</button>
+        <button type="button" class="modal-continue-button">Continue</button>
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
+<button type="button" class="post-button">POST</button>
+<p>* required </p>
