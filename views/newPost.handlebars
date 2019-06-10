@@ -2,31 +2,22 @@
   <div class="input-element">
     <label class="prompt" for="id-input">Confirm your username * </label>
     <input type="text" class="box" id="id-attribution-input">
-  </div>
-  <div class="input-element">
+
     <label class="prompt" for="caption-input">Caption * </label>
     <input type="text" class="box" id="caption-attribution-input" name="nombre">
-  </div>
-  <div class="input-element">
+
     <label class="prompt" for="mates-input">Current roommates * </label>
     <input type="text" class="box" id="mates-attribution-input">
-  </div>
-  <div class="input-element">
+
     <label class="prompt" for="numrooms-input">Number of bedrooms *</label>
     <input type="text" class="box" id="numRooms-attribution-input">
-  </div>
-  <div class="input-element">
+
     <label class="prompt" for="avairooms-input">Number of rooms available *</label>
     <input type="text" class="box" id="avaiRooms-attribution-input">
-  </div>
-  <div class="input-element">
-    <form action="index.html" method="GET">
+
     <label class="prompt" for="price-input">Rent per month * </label>
     <input type="text" class="box" id="price-attribution-input" name="getRent">
-    </form>
-  </div>
 
-  <div class="input-element">
     <p> Distance to OSU (minutes) *</p>
     <label class="prompt" for="walking-input">Walking </label>
     <input type="text" class="box" id="walking-attribution-input">
@@ -34,17 +25,16 @@
     <input type="text" class="box" id="bike-attribution-input">
     <label class="prompt" for="car-input">Car </label>
     <input type="text" class="box" id="car-attribution-input">
-  </div>
-
-  <div class="input-element">
     <label class="prompt" for="text-input">Brief Description about house/apartment *</label>
     <textarea class="box" id="description-text-input"></textarea>
-  </div>
 
-  <div class="input-element">
     <label class="prompt" for="photos-input">Add photos of house * </label>
     <button type="button" id="add-photos" class="add-button">Add</button>
+
+    <p>* required </p>
   </div>
+
+
 
   <div id="modal-backdrop" class="hidden"></div>
   <div id="addPhoto-modal" class="hidden">
@@ -81,4 +71,3 @@
 </form>
 
 <button type="button" class="post-button">POST</button>
-<p>* required </p>
