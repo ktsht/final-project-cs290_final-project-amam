@@ -1,7 +1,7 @@
 body {
-        font-family: 'Karla', sans-serif, Roboto, Helvetica;
-        margin: 0;
-        background-color: #ff057600;
+  font-family: 'Rajdhani', sans-serif;
+  margin: 0;
+  background-color: #ff057600;
 }
 
 a {
@@ -9,7 +9,7 @@ a {
 }
 
 .site-title {
-  font-family: 'Teko', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   margin: 15px 15px;
   /* padding: 14px 25px; */
   font-size: 26pt;

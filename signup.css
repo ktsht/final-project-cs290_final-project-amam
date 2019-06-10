@@ -1,29 +1,49 @@
 html,body{
-    height: 100%;
     width: 100%;
-    display: flex;
+    height: 100%; 
+    /*display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline; */
+}
+
+.logo{
+    position: fixed;
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+.logo-title{
+    font-family: 'Rajdhani', sans-serif;
+    position: fixed;
+    display: inline-block;
+    color: rgba(255, 221, 0, 1);
+    font-size: 103px;
+    top: -5%;
+    left: 2%;
 }
 
 #myVideo {
-    position: relative;
-    margin: none;
-    padding: none;
+    position: absolute;
     right: 0;
     bottom: 0;
-    width: 100%; 
+    margin: none;
+    padding: none;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 .Signup-Box{
     display: flex;
+    flex-wrap: wrap;
     position: fixed;
-    top: -5%;
     background-color: rgba(255, 221, 0, 0.5);
     height: 550px;
     width: 550px;
-    margin-left: 100px;
+    margin-left: 110px;
     margin-right:  100px;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -31,30 +51,30 @@ html,body{
 
 .Signup-Box-Content{
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 4%;
     margin-bottom: 8%;
 }
+
 .signup-header{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     color: hsla(0, 0%, 0%, 0.9);
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 3%;
+    margin: none;
     width: 650px;
     height: 50px;
 }
+
 .field{
-    font-weight: 900;
-    font-style: 1200;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 .input-box {
     display: flex;
     margin-left: 10%;
-    margin-top: 2.2%;
-    margin-bottom: 2.2%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
     font-weight: bold;
     flex: 0 1 5%;
     height: 20px;
@@ -62,11 +82,13 @@ html,body{
     background-color: rgba(255, 221, 0, 1);
     border: none;
 }
-.unit{
-    padding: 8%;
+
+::placeholder{
+    color: black;
 }
+
 .sign-up-button{
-    
+    flex-wrap: wrap;
     position: fixed;
     top: 40%;
     left: -1.5%;
@@ -75,11 +97,12 @@ html,body{
     margin-left: 70%;
     background-color: rgba(255, 221, 0, 1);
     border-color: rgba(255, 221, 0, 1);
+    font-family: 'Rajdhani', sans-serif;
 }
 
 .option{
     color: hsla(0, 0%, 0%, 0.9);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 #dropdown-content{
