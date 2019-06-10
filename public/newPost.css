@@ -1,23 +1,98 @@
 a {
   text-decoration: none;
+  font-weight: bold;
 }
+
 p {
   margin-left: 5%;
   margin-top: 1%;
   font-weight: bold;
   font-style: italic;
+  font-size: 20px;
+}
+/* p {
+  margin-left: 45%;
+  top: 80%;
+
+} */
+.input-element {
+  margin-left: 30%;
+  top: 19%;
+  position: absolute;
+  font-size: 20px;
+
+  left: -1.5%
+}
+.input-element-other {
+  margin-left: 60%;
+  top: 18%;
+  position: absolute;
+  font-size: 20px;
 }
 
+.back-modal {
+display: flex;
+position: absolute;
+top: 15%;
+background-color: #ffdd00;
+height: 420px;
+width: 850px;
+margin-left: 21%;
+padding-left: 10%;
+margin-right:  50px;
+/* margin-top: 30px; */
+margin-bottom: 50px;
+}
+.required {
+  position: absolute;
+  top: 65%;
+  left: -1.5%;
+  margin-left: 48%;
+}
 .post-button {
-  margin-left: 5%;
+  /* margin-left: 5%;
   margin-top: 1%;
+  font-weight: bold; */
+
+  position: absolute;
+  top: 70%;
+  left: -1.5%;
+  height: 100px;
+  width: 200px;
+  margin-left: 45%;
+  background-color: rgba(255, 221, 0, 1);
+  border-color: rgba(255, 221, 0, 1);
   font-weight: bold;
+
+}
+
+
+.add-button{
+  /* position: absolute;
+  top: 70%;
+  left: -1.5%;
+  height: 50px;
+  width: 100px; */
+
+
+  margin-left: 5%;
+  background-color: rgba(255, 221, 0, 1);
+  border-color: rgba(255, 221, 0, 1);
+  font-weight: bold;
+
+  height: 40px;
+  width: 60px;
 }
 .prompt {
   margin-left: 5%;
   margin-top: 1%;
   font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+
+
 .box {
   margin-left: 5%;
   margin-bottom: 1%;
@@ -52,7 +127,7 @@ p {
   display: none;
 }
 
-.modal-dialog {
+.modal-dialog-newPost {
   width: auto;
   max-width: 600px;
   min-width: 350px;
