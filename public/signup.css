@@ -1,10 +1,11 @@
 html,body{
     height: 100%;
     width: 100%;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 #myVideo {
-    position: relative;
+    position: fixed;
     margin: none;
     padding: none;
     right: 0;
@@ -14,10 +15,28 @@ html,body{
     object-fit: cover;
 }
 
+.logoIMG{
+    position: relative;
+    width: 75px;
+    /* bottom: 677px; */
+    /* right: -3px; */
+}
+
+.Title{
+    color: #ffdd00;
+    position: relative;
+    font-family: 'Rajdhani', sans-serif;
+    /* bottom: 719px; */
+    /* left: 112px; */
+    padding: 21px 0 0 20px;
+    font-size: 35pt;
+    font-weight: bold;
+}
+
 .Signup-Box{
     display: flex;
     position: fixed;
-    top: -5%;
+    top: 3%;
     background-color: rgba(255, 221, 0, 0.5);
     height: 550px;
     width: 550px;
@@ -33,7 +52,7 @@ html,body{
     margin-bottom: 8%;
 }
 .signup-header{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     color: hsla(0, 0%, 0%, 0.9);
     font-size: 30px;
     font-weight: 600;
@@ -45,7 +64,7 @@ html,body{
     font-weight: 900;
     font-style: 1200;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 .input-box {
@@ -82,7 +101,7 @@ html,body{
 
 .option{
     color: hsla(0, 0%, 0%, 0.9);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 #dropdown-content{
@@ -102,4 +121,13 @@ select {
     -webkit-appearance: none;
     -webkit-border-radius: 0px;
     border-radius: none;
+}
+
+.logo-container {
+    display: -webkit-inline-box;
+    margin: 10px 0 0 20px;
+}
+
+body{
+
 }
