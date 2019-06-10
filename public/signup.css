@@ -60,6 +60,12 @@ html,body{
     background-color: rgba(255, 221, 0, 1);
     border: none;
 }
+
+::placeholder{
+        color: black;
+}
+
+
 .unit{
     padding: 8%;
 }

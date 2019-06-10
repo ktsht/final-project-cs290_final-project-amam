@@ -3,42 +3,42 @@
         {{#if has_post}}
   <article class="house">
     <div class="house-content">
-      <a href="/detail/{{_id}}" class="house-image"><image src='{{img}}'></a>
+      <a href="/detail/{{_id}}" class="house-image"><image src='{{house.0.phot1}}'></a>
       <p class="house-text">
-        <a href="/detail/{{_id}}">{{caption}}</a>
+        <a href="/detail/{{_id}}">{{house.0.caption}}</a>
       </p>
       <div class="distance">
               <div class="walking">
                       <image class="transport_img" src='/images/walking.png'>
                               <div class="time">
-                                        <p class="digits">{{walking}}</p>
+                                        <p class="digits">{{house.0.walking}}</p>
                                         <p class="minutes">min</p>
                               </div>
               </div>
               <div class="bike">
                       <image class="transport_img" src='/images/bicycle.png'>
                               <div class="time">
-                                        <p class="digits">{{bicycle}}</p>
+                                        <p class="digits">{{house.0.bike}}</p>
                                         <p class="minutes">min</p>
                               </div>
               </div>
               <div class="car">
                       <image class="transport_img" src='/images/car.png'>
                               <div class="time">
-                                        <p class="digits">{{car}}</p>
+                                        <p class="digits">{{house.0.car}}</p>
                                         <p class="minutes">min</p>
                               </div>
               </div>
       </div>
       <div class="author">
-              <image class="human" src='{{profile}}'>
+              <image class="human" src='{{profile_pic}}'>
               <p class="house-author">
                 <a href="#">{{first_name}}</a>
                 <a href="/major/{{major}}">#{{major}}</a>
                 <a href="/year/{{year}}">#{{year}}</a>
               </p>
      </div>
-     <p class="price">${{price}}</p>
+     <p class="price">${{house.0.price}}</p>
     </div>
   </article>
    {{/if}}
