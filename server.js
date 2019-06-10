@@ -116,7 +116,7 @@ app.post('/postt', function(req, res){
 								};
 								collection.updateOne(
 									{ username: id },
-									{ $push: { house: newHouse} },
+									{ $set: { has_post: 1 },  $push: { house: newHouse} },
 									function (err, result) {
 										if (err) {
 											res.status(500).send({
