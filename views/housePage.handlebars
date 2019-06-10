@@ -1,5 +1,6 @@
 <main class="house-container">
   {{#each house}}
+        {{#if has_post}}
   <article class="house">
     <div class="house-content">
       <a href="/detail/{{_id}}" class="house-image"><image src='{{img}}'></a>
@@ -40,6 +41,7 @@
      <p class="price">${{price}}</p>
     </div>
   </article>
+   {{/if}}
   {{/each}}
 
 </main>
