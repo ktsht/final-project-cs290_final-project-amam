@@ -9,14 +9,12 @@ var ObjectId = require('mongodb').ObjectId;
 var houseData = require('./houseData');
 
 var mongoHost = "classmongo.engr.oregonstate.edu";
-var mongoPort = '27017';
+var mongoPort = process.env.MONGO_PORT || 27017;
 var mongoUsername = "cs290_kitaa";
 var mongoPassword = "cs290amam";
 var mongoDBName = "cs290_kitaa";
 
-var mongoURL = "mongodb://" +
-        mongoUsername + ":" + mongoPassword + "@" + mongoHost +
-        ":" + mongoPort + "/" + mongoDBName;
+var mongoURL = "mongodb://" + mongoUsername + ":" + mongoPassword + "@" + mongoHost + ":" + mongoPort + "/" + mongoDBName;
 
 var mongoDB = null;
 
@@ -33,11 +31,11 @@ app.use(express.static('public'));
 app.get('/link', function(req, res, next){
 	res.status(200).sendFile('/public/splash.html');
 	res.redirect('/splash.html');
-	
+
 });
 
 app.get('/', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         houseCollection.find({}).toArray(function(err, houseDocs){
                 if(err){
                         res.status(500).send("Error connecting to DB.");
@@ -49,15 +47,15 @@ app.get('/', function(req, res, next){
 });
 
 app.get('/signup', function(req, res, next){
-        var houseCollection = mongoDB.collection('test2');
-        res.status(200).sendFile('/public/signup.html');
+        var houseCollection = mongoDB.collection('house');
+        res.status(200).sendFile('signup.html');
 });
 
 
 app.post('/signup', function(req, res){
         if(req.body && req.body.first_name && req.body.last_name && req.body.major
         && req.body.year && req.body.username && req.body.password){
-                var collection = mongoDB.collection('test2');    
+                var collection = mongoDB.collection('house');    
                 collection.insertOne({
                         first_name: req.body.first_name,
                         last_name: req.body.last_name,
@@ -86,12 +84,61 @@ app.post('/signup', function(req, res){
         }
 });
 
-app.get('/sample', function(req, res, next){
-        res.status(200).render('sample_post');
+app.get('/postt', function(req, res, next){
+        res.status(200).render('newPost');
+});
+
+app.post('/postt', function(req, res){
+        if(req.body && req.body.id && req.body.caption
+        && req.body.currMates && req.body.numRooms && req.body.avRooms
+				&& req.body.price && req.body.walking && req.body.bike
+				&& req.body.car && req.body.description && req.body.photo1 || req.body.photo2 ||
+				req.body.photo3 || req.body.photo4 || req.body.photo5){
+                var collection = mongoDB.collection('house');
+								var id = req.body.id;
+								console.log("ID== ", id);
+								var newHouse = {
+									caption: req.body.caption,
+					        currMates: req.body.currMates,
+					        numRooms: req.body.numRooms,
+					        avRooms: req.body.avRooms,
+					        price: req.body.price,
+					        walking: req.body.walking,
+					        bike: req.body.bike,
+					        car: req.body.car,
+					        description: req.body.description,
+									phot1: req.body.photo1,
+									phot2: req.body.photo2,
+									phot3: req.body.photo3,
+								 	phot4: req.body.photo4,
+									phot5: req.body.photo5
+
+								};
+								collection.updateOne(
+									{ username: id },
+									{ $push: { house: newHouse} },
+									function (err, result) {
+										if (err) {
+											res.status(500).send({
+												error: "Error inserting photo into DB"
+											});
+										} else {
+											console.log("== update result:", result);
+											if (result.matchedCount > 0) {
+												res.status(200).send("Success");
+											} else {
+												next();
+											}
+										}
+									}
+								);}
+								else{
+                res.status(400).send("Request needs to have all fields.");
+        }
 });
 
 app.get('/maxPrice/:maxPrice', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var maxPrice = req.params.maxPrice;
         houseCollection.find({price: {$lte: eval(maxPrice)}}).sort({price:1}).toArray(function(err, houseDocs){
                 if(err){
@@ -111,7 +158,7 @@ app.get('/maxPrice/:maxPrice', function(req, res, next){
 });
 
 app.get('/major/:major', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var findMajor = req.params.major;
         console.log("Major: "+findMajor);
         houseCollection.find({major: new RegExp(findMajor)}).toArray(function(err, houseDocs){ // change cursor to toArray
@@ -125,7 +172,7 @@ app.get('/major/:major', function(req, res, next){
 });
 
 app.get('/year/:year', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var findYear = req.params.year;
         console.log("Year: "+findYear);
         houseCollection.find({year: new RegExp(findYear)}).toArray(function(err, houseDocs){ // change cursor to toArray
@@ -148,7 +195,7 @@ app.get('/people/:person', function (req, res, next) {
 });
 
 app.get('/detail/:id', function(req, res, next){
-        var houseCollection = mongoDB.collection('test');
+        var houseCollection = mongoDB.collection('house');
         var houseId = req.params.id;
         houseCollection.find({_id: new ObjectId(houseId)}).toArray(function(err, houseDocs){
                 console.log("houseId: " + houseId);
