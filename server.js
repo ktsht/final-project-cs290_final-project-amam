@@ -88,6 +88,61 @@ app.post('/signup', function(req, res){
         }
 });
 
+app.get('/postt', function(req, res, next){
+        res.status(200).render('newPost');
+});
+
+app.post('/postt', function(req, res){
+        if(req.body && req.body.id && req.body.caption
+        && req.body.currMates && req.body.numRooms && req.body.avRooms
+				&& req.body.price && req.body.walking && req.body.bike
+				&& req.body.car && req.body.description && req.body.photo1 || req.body.photo2 ||
+				req.body.photo3 || req.body.photo4 || req.body.photo5){
+                var collection = mongoDB.collection('house');
+								var id = req.body.id;
+								console.log("ID== ", id);
+								var newHouse = {
+									caption: req.body.caption,
+					        currMates: req.body.currMates,
+					        numRooms: req.body.numRooms,
+					        avRooms: req.body.avRooms,
+					        price: req.body.price,
+					        walking: req.body.walking,
+					        bike: req.body.bike,
+					        car: req.body.car,
+					        description: req.body.description,
+									phot1: req.body.photo1,
+									phot2: req.body.photo2,
+									phot3: req.body.photo3,
+								 	phot4: req.body.photo4,
+									phot5: req.body.photo5
+
+								};
+								collection.updateOne(
+									{ username: id },
+									{ $set: { has_post: 1 },  $push: { house: newHouse} },
+									function (err, result) {
+										if (err) {
+											res.status(500).send({
+												error: "Error inserting photo into DB"
+											});
+										} else {
+											console.log("== update result:", result);
+											if (result.matchedCount > 0) {
+												res.status(200).send("Success");
+											} else {
+												next();
+											}
+										}
+									}
+								);}
+								else{
+                res.status(400).send("Request needs to have all fields.");
+        }
+});
+
+
+
 app.get('/maxPrice/:maxPrice', function(req, res, next){
         var houseCollection = mongoDB.collection('house');
         var maxPrice = req.params.maxPrice;

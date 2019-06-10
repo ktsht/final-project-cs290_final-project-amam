@@ -1,0 +1,145 @@
+a {
+  text-decoration: none;
+}
+p {
+  margin-left: 5%;
+  margin-top: 1%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.post-button {
+  margin-left: 5%;
+  margin-top: 1%;
+  font-weight: bold;
+}
+.prompt {
+  margin-left: 5%;
+  margin-top: 1%;
+  font-weight: bold;
+}
+.box {
+  margin-left: 5%;
+  margin-bottom: 1%;
+  font-weight: bold;
+  flex: 0 1 28%;
+  display: flex;
+}
+
+/**********************************************/
+
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 221, 0, 0.5);
+}
+
+#addPhoto-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-dialog {
+  width: auto;
+  max-width: 600px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+
+
+}
+
+.modal-header {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.url-input-element label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 10px;
+
+  flex: 0 1 28%;
+  display: flex;
+}
+
+.url-input-element input,
+.url-input-element textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+
+  flex: 0 1 28%;
+  display: flex;
+}
+
+.url-input-element textarea {
+  min-height: 64px;
+
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-footer button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-footer .modal-cancel-button:hover {
+  background-color: rgba(255, 221, 0, 0.5);
+}
+
+.modal-footer .modal-continue-button {
+  background-color: white;
+  color: solid black;
+}
+
+.modal-footer .modal-continue-button:hover {
+  background-color: rgba(255, 221, 0, 0.5);
+}
