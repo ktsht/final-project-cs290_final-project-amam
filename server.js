@@ -6,8 +6,6 @@ var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectId;
 
-var houseData = require('./houseData');
-
 var mongoHost = "classmongo.engr.oregonstate.edu";
 var mongoPort = '27017';
 var mongoUsername = "cs290_kitaa";
