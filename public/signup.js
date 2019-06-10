@@ -50,4 +50,11 @@ button.addEventListener('click', function (event){
     }
     postRequest.setRequestHeader('Content-Type', 'application/json');
     postRequest.send(requestBody);
+    document.getElementById('first-name-input').value = "";
+    document.getElementById('last-name-input').value = "";
+    document.getElementById('major-input').value = "";
+    document.getElementById('year-input').value = "--Select--";
+    document.getElementById('username-input').value = "";
+    document.getElementById('password-input').value = "";
+    document.getElementById('profile-input').value = "";
 });
