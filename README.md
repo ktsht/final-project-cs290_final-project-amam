@@ -52,4 +52,5 @@ Link Website page flow
         newPost.js
         newPost.css
         newPost.handlebars
+        server.js (to be able to update to db)
      
