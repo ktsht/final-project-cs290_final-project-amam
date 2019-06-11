@@ -10,11 +10,7 @@ p {
   font-style: italic;
   font-size: 20px;
 }
-/* p {
-  margin-left: 45%;
-  top: 80%;
 
-} */
 .input-element {
   margin-left: 30%;
   top: 19%;
@@ -31,31 +27,27 @@ p {
 }
 
 .back-modal {
-display: flex;
-position: absolute;
-top: 15%;
-background-color: #ffdd00;
-height: 420px;
-width: 850px;
-margin-left: 21%;
-padding-left: 10%;
-margin-right:  50px;
-/* margin-top: 30px; */
-margin-bottom: 50px;
+   display: flex;
+   position: absolute;
+   top: 18%;
+   background-color: #ffdd00;
+   height: 380px;
+   width: 825px;
+   margin-left: 21%;
+   padding-left: 10%;
+   margin-right:  50px;
+   margin-bottom: 50px;
 }
 .required {
   position: absolute;
-  top: 65%;
+  top: 70%;
   left: -1.5%;
   margin-left: 48%;
 }
 .post-button {
-  /* margin-left: 5%;
-  margin-top: 1%;
-  font-weight: bold; */
 
   position: absolute;
-  top: 70%;
+  top: 76%;
   left: -1.5%;
   height: 100px;
   width: 200px;
@@ -66,6 +58,19 @@ margin-bottom: 50px;
 
 }
 
+.go-to-main {
+  
+  position: absolute;
+  top: 90%;
+  left: -1.5%;
+  height: 40px;
+  width: 200px;
+  margin-left: 45%;
+  background-color: white;
+  border-color: rgba(255, 221, 0, 1);
+  font-weight: bold;
+
+}
 
 .add-button{
   /* position: absolute;
