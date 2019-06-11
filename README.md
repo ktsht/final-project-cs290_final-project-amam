@@ -48,9 +48,9 @@ Link Website page flow
         server.js
        
     Miguel:
-        newPost.html
+        newPost.html (using handlebars instead)
         newPost.js
         newPost.css
         newPost.handlebars
-        server.js (to be able to update to db)
+        server.js (to update to db)
      
