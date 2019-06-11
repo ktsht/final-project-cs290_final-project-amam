@@ -10,67 +10,48 @@ p {
   font-style: italic;
   font-size: 20px;
 }
+/* p {
+  margin-left: 45%;
+  top: 80%;
 
+} */
 .input-element {
   margin-left: 30%;
-  top: 19%;
-  position: absolute;
+  top: 27%;
+  position: fixed;
   font-size: 20px;
-
-  left: -1.5%
+  left: -1.5%;
 }
 .input-element-other {
   margin-left: 60%;
-  top: 18%;
+  top: 27%;
   position: absolute;
   font-size: 20px;
 }
 
-.back-modal {
-   display: flex;
-   position: absolute;
-   top: 18%;
-   background-color: #ffdd00;
-   height: 380px;
-   width: 825px;
-   margin-left: 21%;
-   padding-left: 10%;
-   margin-right:  50px;
-   margin-bottom: 50px;
-}
+.back-modal {display: flex;position: relative;background-color: #ffdd00;height: 384px;width: 600px;margin-left: 21%;margin-top: 50px;padding-left: 10%;margin-right:  50px;/* margin-top: 30px; */margin-bottom: 50px;}
 .required {
   position: absolute;
-  top: 70%;
-  left: -1.5%;
+  top: 73%;
+  left: -18.5%;
   margin-left: 48%;
 }
 .post-button {
-
+  /* margin-left: 5%;
+  margin-top: 1%;
+  font-weight: bold; */
   position: absolute;
-  top: 76%;
-  left: -1.5%;
+  top: 83%;
+  left: 0.5%;
   height: 100px;
   width: 200px;
   margin-left: 45%;
   background-color: rgba(255, 221, 0, 1);
+  border: solid 1px black;
   border-color: rgba(255, 221, 0, 1);
   font-weight: bold;
-
 }
 
-.go-to-main {
-  
-  position: absolute;
-  top: 90%;
-  left: -1.5%;
-  height: 40px;
-  width: 200px;
-  margin-left: 45%;
-  background-color: white;
-  border-color: rgba(255, 221, 0, 1);
-  font-weight: bold;
-
-}
 
 .add-button{
   /* position: absolute;
@@ -78,13 +59,11 @@ p {
   left: -1.5%;
   height: 50px;
   width: 100px; */
-
-
   margin-left: 5%;
   background-color: rgba(255, 221, 0, 1);
   border-color: rgba(255, 221, 0, 1);
+  border: solid 1px;
   font-weight: bold;
-
   height: 40px;
   width: 60px;
 }
